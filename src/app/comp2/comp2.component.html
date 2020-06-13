@@ -1,0 +1,37 @@
+<h3>Check here for image slider</h3>
+<button (click)="openslider()">Click here</button>
+<ngb-carousel *ngIf="varopenslider" [showNavigationArrows]="true" 
+[showNavigationIndicators]="true"
+interval="1000"
+[keyboard]="true"
+[pauseOnHover]="true"
+[wrap]="true"
+[activeId]="'firstSlide'">
+    <ng-template ngbSlide id="firstSlide">
+      <div class="picsum-img-wrapper">
+        <img [src]="imagePath1" alt="Random first slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide id="secondSlide">
+      <div class="picsum-img-wrapper">
+        <img [src]="imagePath2" alt="Random second slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide id="thirdSlide">
+      <div class="picsum-img-wrapper">
+        <img [src]="imagePath3" alt="Random third slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
