@@ -1,4 +1,4 @@
-import { Component, Inject, Injectable, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {NgbModal, ModalDismissReasons, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from  '@angular/material/dialog';
 @Component({
@@ -27,7 +27,7 @@ export class Comp1Component implements OnInit {
   modalOptions:NgbModalOptions;
   
   open(content) {
-    this.currdate = new Date();  
+    this.currdate = new Date(); 
     this.modalService.open(content, this.modalOptions).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -44,5 +44,28 @@ export class Comp1Component implements OnInit {
       return  `with: ${reason}`;
     }
   }
+  // sharing data - getting from parent
+  @Input() childData:string;
 
+  //sharing data - send to parent
+  @Output() parentOutput = new EventEmitter<number>();
+  incremenval:number = 1;
+  incrChildClick(){
+    this.incremenval++;
+    this.parentOutput.emit(this.incremenval); 
+  }
+  decrChildClick(){
+    this.incremenval--;
+    this.parentOutput.emit(this.incremenval); 
+  }
+  // sharing data - getting from parent by viewchild
+  viewChildData: string = 'Hi Angular9';
+  decrChildViewClick(){
+    this.incremenval = 0;
+    this.parentOutput.emit(this.incremenval); 
+  }
+  incrChildViewClick(){
+    this.incremenval = 1;
+    this.parentOutput.emit(this.incremenval); 
+  }
 }

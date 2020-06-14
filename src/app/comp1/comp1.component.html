@@ -21,3 +21,17 @@
       <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
     </div>
   </ng-template>
+  <div>
+    <label>Data getting from parent:</label>
+    <span style="color: orange;">&nbsp;&nbsp;"{{childData}}"</span>
+  </div>
+  <div>
+    <label>Data sharing to parent:</label>&nbsp;&nbsp;
+    <span class="spancl" (click)="incrChildClick()">click here for +</span>&nbsp;&nbsp;
+    <span class="spancl" (click)="decrChildClick()">click here for - </span>
+  </div>
+  <div>
+    <label>Data sharing to parent by using @viewChild and @ngAfterViewInit:</label>&nbsp;&nbsp;
+    <span class="spancl" (click)="decrChildViewClick()">See below by click here for show</span>&nbsp;&nbsp;
+    <span class="spancl" (click)="incrChildViewClick()">See below by click here for hide</span>
+  </div>

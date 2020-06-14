@@ -36,8 +36,10 @@
                 If you don’t have an idea for the design, feel free to check the example I’ve prepared for you.</p>
                 <img [src]="imagePath1">
                 <div id="comp1">
-                    <app-comp1></app-comp1>
+                    <app-comp1 [childData]="parentData" (parentOutput)="methodParent($event)"></app-comp1>
                 </div>
+                <h3>{{fromChildData}}</h3>
+                <h3 [hidden]="fromChildData != 0">{{fromChildData2}}</h3>
         </section>
         <section id="section2">
             <h2>2.&nbsp;&nbsp;&nbsp;Simple Image Slider</h2>

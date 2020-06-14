@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Comp1Component } from './comp1/comp1.component';
 
 @Component({
@@ -14,4 +14,20 @@ export class AppComponent {
   imagePath3: string = 'assets/img3.png';
   imagePath5: string = 'assets/img5.jpeg';
   imagePath6: string = 'assets/img6.jpeg';
+
+  // passing data to child
+  parentData: string = 'Hi I am parent data';
+
+  // Getting value from child by output decorator
+  fromChildData:number;
+  methodParent($event){
+    this.fromChildData = $event;
+  }
+
+  // Getting value from child by viechild decorator
+  @ViewChild(Comp1Component) childRef;
+  fromChildData2:string;
+  ngAfterViewInit(){
+    this.fromChildData2 = this.childRef.viewChildData;
+  }
 }
