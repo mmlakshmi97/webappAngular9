@@ -7,18 +7,26 @@ import { AppComponent } from './app.component';
 import { Comp1Component } from './comp1/comp1.component';
 import { Comp2Component } from './comp2/comp2.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { InMemoryWebApiModule } from "angular-in-memory-web-api";  
+import { Service1Service } from "./service1.service";
+import { HttpClientModule } from "@angular/common/http";
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Comp1Component,
-    Comp2Component
+    Comp2Component,
+    ProductListComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
+    HttpClientModule,
+    InMemoryWebApiModule.forRoot(Service1Service),
     NgbModule
   ],
   providers: [],
