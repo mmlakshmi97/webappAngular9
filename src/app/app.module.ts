@@ -12,6 +12,7 @@ import { Service1Service } from "./service1.service";
 import { HttpClientModule } from "@angular/common/http";
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { Module1Module } from './module1/module1.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     MatDialogModule,
     HttpClientModule,
     InMemoryWebApiModule.forRoot(Service1Service),
-    NgbModule
+    NgbModule,
+    Module1Module
   ],
   providers: [],
   bootstrap: [AppComponent],

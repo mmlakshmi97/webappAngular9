@@ -58,7 +58,7 @@ export class Comp1Component implements OnInit {
     this.incremenval--;
     this.parentOutput.emit(this.incremenval); 
   }
-  // sharing data - getting from parent by viewchild
+  // sharing data - sent to parent by viewchild
   viewChildData: string = 'Hi Angular9';
   decrChildViewClick(){
     this.incremenval = 0;
