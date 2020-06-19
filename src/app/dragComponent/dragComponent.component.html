@@ -1,0 +1,9 @@
+<div>
+  <h2>Drag and Drop Functionality</h2>
+  <div class="drag-box" cdkDrag>
+      Drag me around
+  </div>
+  <div cdkDropList class="drag-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+  </div>
+</div>

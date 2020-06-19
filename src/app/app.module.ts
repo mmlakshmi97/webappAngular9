@@ -13,6 +13,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { Module1Module } from './module1/module1.module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { dragComponent } from './dragComponent/dragComponent.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { Module1Module } from './module1/module1.module';
     Comp1Component,
     Comp2Component,
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    dragComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { Module1Module } from './module1/module1.module';
     HttpClientModule,
     InMemoryWebApiModule.forRoot(Service1Service),
     NgbModule,
-    Module1Module
+    Module1Module,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent],
