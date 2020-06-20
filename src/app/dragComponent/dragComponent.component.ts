@@ -1,4 +1,6 @@
 import { Component, OnInit} from '@angular/core';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-drag-drop',
   templateUrl: './dragComponent.component.html',
@@ -23,4 +25,7 @@ export class dragComponent implements OnInit {
     'Episode VIII - The Last Jedi',
     'Episode IX – The Rise of Skywalker'
   ];
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+  }
 }

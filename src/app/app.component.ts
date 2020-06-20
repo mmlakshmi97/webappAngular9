@@ -30,4 +30,7 @@ export class AppComponent {
   ngAfterViewInit(){
     this.fromChildData2 = this.childRef.viewChildData;
   }
+
+  // Pipe implementation
+  buildinpipe : string = 'It is a PIPE for Uppercase';
 }

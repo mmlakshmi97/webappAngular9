@@ -121,5 +121,11 @@
     <div id="drag_and_drop">
         <app-drag-drop></app-drag-drop>
     </div>
+    <!-- Pipe implementation-->
+    <div id="pipediv">
+        <h2>This is a Pipe implementation</h2>
+        <label>This is Builtin pipe {{buildinpipe | uppercase}}</label><br>
+        <label>This is custom pipe {{buildinpipe | firstpipe}}</label>
+    </div>
 </div>
 <router-outlet></router-outlet>

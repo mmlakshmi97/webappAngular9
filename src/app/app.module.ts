@@ -15,6 +15,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { Module1Module } from './module1/module1.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { dragComponent } from './dragComponent/dragComponent.component';
+import { FirstpipePipe } from './firstpipe.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { dragComponent } from './dragComponent/dragComponent.component';
     Comp2Component,
     ProductListComponent,
     ProductDetailComponent,
-    dragComponent
+    dragComponent,
+    FirstpipePipe
   ],
   imports: [
     BrowserModule,
